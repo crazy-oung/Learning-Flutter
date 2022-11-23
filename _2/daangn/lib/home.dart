@@ -3,6 +3,8 @@ import 'package:http/http.dart' as http;
 import 'package:jiffy/jiffy.dart';
 import 'dart:convert';
 
+import './appBar.dart';
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -70,6 +72,7 @@ class _HomeState extends State<Home> {
             Icons.arrow_drop_down,
             color: Colors.white,
           ),
+          // underline 감추기
           underline: const SizedBox(
             height: 0,
           ),
@@ -306,7 +309,41 @@ class _HomeState extends State<Home> {
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
-                                children: [],
+                                children: [
+                                  const Icon(
+                                    Icons.favorite,
+                                    color: Colors.grey,
+                                    size: 14,
+                                  ),
+                                  const SizedBox(
+                                    width: 5,
+                                  ),
+                                  Text(
+                                    productList[index]['favorite'].toString(),
+                                    style: const TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  const Icon(
+                                    Icons.comment,
+                                    color: Colors.grey,
+                                    size: 14,
+                                  ),
+                                  const SizedBox(
+                                    width: 5,
+                                  ),
+                                  Text(
+                                    productList[index]['comment'].toString(),
+                                    style: const TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
